@@ -11,7 +11,6 @@ export default function TrusyncLanding() {
     e.preventDefault();
     console.log('Waitlist:', formData);
     setSubmitted(true);
-    
     setTimeout(() => {
       setSubmitted(false);
       setFormData({ name: '', email: '', company: '' });
@@ -38,10 +37,9 @@ export default function TrusyncLanding() {
             <a href="#vision" className="hover:text-[#ff4d94] transition-colors">Vision</a>
           </div>
 
-          {/* Pink Navbar Button */}
           <a 
             href="#waitlist" 
-            className="px-6 py-3 bg-[#ff4d94] hover:bg-[#ff4d94]/90 text-white font-medium rounded-full transition-all flex items-center gap-2 btn-pink"
+            className="px-8 py-3 bg-[#ff4d94] hover:bg-[#ff4d94]/90 text-white font-medium rounded-full transition-all flex items-center gap-2"
           >
             Request Early Access
             <ArrowRight size={18} />
@@ -52,11 +50,6 @@ export default function TrusyncLanding() {
       {/* HERO */}
       <section className="pt-32 pb-24 px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 mb-8">
-            <span className="uppercase text-xs tracking-[3px]"></span>
-          </div>
-
-          {/* Pink Heading */}
           <h1 className="text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-8 text-[#ff4d94]">
             Trust infrastructure<br />for autonomous AI agents
           </h1>
@@ -65,16 +58,13 @@ export default function TrusyncLanding() {
             Trusync helps AI agents transact, negotiate, and operate securely with transparency and human oversight.
           </p>
 
-          {/* Pink Hero Button */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="#waitlist" 
-              className="px-10 py-4 bg-[#ff4d94] hover:bg-[#ff4d94]/90 rounded-2xl font-medium text-lg transition-all inline-flex items-center justify-center gap-3 btn-pink"
-            >
-              Request Early Access
-              <ArrowRight />
-            </a>
-          </div>
+          <a 
+            href="#waitlist" 
+            className="inline-flex items-center gap-3 px-10 py-4 bg-[#ff4d94] hover:bg-[#ff4d94]/90 text-white font-medium text-lg rounded-2xl transition-all"
+          >
+            Request Early Access
+            <ArrowRight />
+          </a>
         </div>
       </section>
 
@@ -84,7 +74,7 @@ export default function TrusyncLanding() {
           <h2 className="text-5xl font-semibold tracking-tighter mb-10">AI Agents Need Trust</h2>
           <p className="text-2xl text-gray-400">
             As AI systems become more autonomous, they will make important decisions independently.<br /><br />
-            But there is currently <span className="text-[#ff4d94]">no trusted infrastructure</span> to help them transact safely, manage risk, and escalate to humans when needed.
+            But there is currently <span className="text-[#ff4d94] font-semibold">no trusted infrastructure</span> to help them transact safely.
           </p>
         </div>
       </section>
@@ -93,7 +83,6 @@ export default function TrusyncLanding() {
       <section id="solution" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-semibold tracking-tighter text-center mb-16">What Trusync Enables</h2>
-          
           <div className="grid md:grid-cols-2 gap-6">
             {[
               { icon: Shield, title: "Secure Transactions", desc: "AI agents transact with safety checks and real-time monitoring." },
@@ -101,31 +90,10 @@ export default function TrusyncLanding() {
               { icon: Users, title: "Human Oversight", desc: "Escalate difficult situations to humans instantly." },
               { icon: Eye, title: "Transparency & Logging", desc: "Complete audit trails of all agent activity." }
             ].map((feature, i) => (
-              <div key={i} className="bg-[#111111] border border-white/10 rounded-3xl p-10 hover:border-[#ff4d94]/50 transition-all glow-blue">
+              <div key={i} className="bg-[#111111] border border-white/10 rounded-3xl p-10 hover:border-[#ff4d94]/50 transition-all">
                 <feature.icon size={36} className="text-[#ff4d94] mb-6" />
                 <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
                 <p className="text-gray-400">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section id="how" className="py-24 bg-[#111111]">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-5xl font-semibold tracking-tighter text-center mb-16">How It Works</h2>
-          <div className="space-y-16">
-            {[
-              "AI agent initiates action or transaction",
-              "Trusync evaluates risk, pricing, trust signals, and compliance",
-              "Transaction executes safely with full logging and optional human escalation"
-            ].map((step, i) => (
-              <div key={i} className="flex gap-8">
-                <div className="w-12 h-12 rounded-2xl bg-[#ff4d94]/10 border border-[#ff4d94]/30 flex items-center justify-center text-2xl font-mono text-[#ff4d94] flex-shrink-0">
-                  {i+1}
-                </div>
-                <p className="text-2xl text-gray-300 pt-2">{step}</p>
               </div>
             ))}
           </div>
@@ -145,23 +113,11 @@ export default function TrusyncLanding() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <input type="text" placeholder="Your name" required
-                className="w-full px-6 py-4 bg-[#111111] border border-white/10 rounded-2xl focus:border-[#ff4d94] outline-none"
-                onChange={(e) => setFormData({...formData, name: e.target.value})} />
-              
-              <input type="email" placeholder="Work email" required
-                className="w-full px-6 py-4 bg-[#111111] border border-white/10 rounded-2xl focus:border-[#ff4d94] outline-none"
-                onChange={(e) => setFormData({...formData, email: e.target.value})} />
-              
-              <input type="text" placeholder="Company / Project" 
-                className="w-full px-6 py-4 bg-[#111111] border border-white/10 rounded-2xl focus:border-[#ff4d94] outline-none"
-                onChange={(e) => setFormData({...formData, company: e.target.value})} />
+              <input type="text" placeholder="Your name" required className="w-full px-6 py-4 bg-[#111111] border border-white/10 rounded-2xl focus:border-[#ff4d94] outline-none" onChange={(e) => setFormData({...formData, name: e.target.value})} />
+              <input type="email" placeholder="Work email" required className="w-full px-6 py-4 bg-[#111111] border border-white/10 rounded-2xl focus:border-[#ff4d94] outline-none" onChange={(e) => setFormData({...formData, email: e.target.value})} />
+              <input type="text" placeholder="Company / Project" className="w-full px-6 py-4 bg-[#111111] border border-white/10 rounded-2xl focus:border-[#ff4d94] outline-none" onChange={(e) => setFormData({...formData, company: e.target.value})} />
 
-              {/* Pink Waitlist Button */}
-              <button 
-                type="submit" 
-                className="w-full py-4 bg-[#ff4d94] hover:bg-[#ff4d94]/90 text-white font-semibold rounded-2xl transition btn-pink"
-              >
+              <button type="submit" className="w-full py-4 bg-[#ff4d94] hover:bg-[#ff4d94]/90 text-white font-semibold rounded-2xl transition-all">
                 Request Early Access
               </button>
             </form>
@@ -169,7 +125,6 @@ export default function TrusyncLanding() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-white/10 py-12 text-center text-sm text-gray-500">
         © 2026 Trusync • Building trust for the agent economy
       </footer>
