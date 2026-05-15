@@ -1,0 +1,51 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@import "tailwindcss";
+
+/* ====================== TRUSYNC COLORS ====================== */
+:root {
+  --dark-blue: #001f3f;
+  --pink: #ff4d94;
+}
+
+/* Base styles - matches your mobile app */
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #001f3f;
+  color: white;
+}
+
+/* Easy-to-use classes */
+.bg-dark-blue { background-color: #001f3f; }
+.text-pink { color: #ff4d94; }
+.bg-pink { background-color: #ff4d94; }
+.border-pink { border-color: #ff4d94; }
+
+/* Beautiful pink button (use this everywhere) */
+.btn-pink {
+  background-color: #ff4d94;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: #ff4d94;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 77, 148, 0.5);
+}
+
+/* Keep your original glow */
+.glow-blue {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Optional pink glow */
+.glow-pink {
+  box-shadow: 0 0 25px rgba(255, 77, 148, 0.4);
+}
