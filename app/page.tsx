@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Shield, Scale, Users, Eye, ArrowRight, Check, Play } from 'lucide-react';
+import { Shield, Scale, Users, Eye, ArrowRight, Check } from 'lucide-react';
 
 export default function TrusyncLanding() {
   const [formData, setFormData] = useState({ name: '', email: '', company: '' });
@@ -16,7 +16,7 @@ export default function TrusyncLanding() {
       setSubmitted(false);
       setShowForm(false);
       setFormData({ name: '', email: '', company: '' });
-    }, 5000); // 5 seconds
+    }, 5000);
   };
 
   return (
@@ -28,7 +28,7 @@ export default function TrusyncLanding() {
             <div className="w-7 h-7 rounded-full bg-[#3B82F6] flex items-center justify-center">
               <span className="text-sm font-bold">T</span>
             </div>
-            <span className="font-semibold text-2xl tracking-tighter">Trusync</span>
+            <span className="font-semibold text-2xl tracking-tighter">trusync</span>
           </div>
 
           <button
@@ -40,17 +40,15 @@ export default function TrusyncLanding() {
         </div>
       </nav>
 
-      {/* HERO with Image on the Right */}
+      {/* HERO - Image moved to prominent position */}
       <section className="pt-32 pb-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          
-          {/* Left: Text Content */}
-          <div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
             <h1 className="text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-8">
-              Trust Infrastructure<br />for Autonomous AI agents
+              Trust infrastructure<br />for autonomous AI agents
             </h1>
 
-            <p className="text-xl text-gray-400 max-w-lg mb-10">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
               Trusync helps AI agents transact, negotiate, and operate securely with transparency and human oversight.
             </p>
 
@@ -63,16 +61,15 @@ export default function TrusyncLanding() {
             </button>
           </div>
 
-          {/* Right: Design Picture */}
-          <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+          {/* Prominent Image Placeholder */}
+          <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl mx-auto max-w-5xl">
             <img 
               src="/trusync-hero-placeholder.png" 
               alt="Trusync Platform Concept" 
               className="w-full h-auto object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 bg-black/70 px-5 py-2.5 rounded-2xl text-sm flex items-center gap-2">
-              <span>Trusync in Action</span>
+            <div className="absolute bottom-6 left-6 bg-black/70 px-6 py-3 rounded-2xl text-sm flex items-center gap-3">
+              <span>Trusync in Action — Secure AI Commerce</span>
             </div>
           </div>
         </div>
