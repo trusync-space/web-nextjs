@@ -40,7 +40,7 @@ export default function TrusyncLanding() {
         </div>
       </nav>
 
-      {/* HERO - Centered Picture Placeholder */}
+      {/* HERO - Centered Image */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-8">
@@ -104,57 +104,6 @@ export default function TrusyncLanding() {
           </div>
         </div>
       </section>
-
-      {/* HOW IT WORKS */}
-      <section id="how" className="py-24 bg-[#111111]">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-5xl font-semibold tracking-tighter text-center mb-16">How It Works</h2>
-          <div className="space-y-16">
-            {[
-              "AI agent initiates action or transaction",
-              "Trusync evaluates risk, pricing, trust signals, and compliance",
-              "Transaction executes safely with full logging and optional human escalation"
-            ].map((step, i) => (
-              <div key={i} className="flex gap-8 items-start">
-                <div className="w-12 h-12 rounded-2xl bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center text-2xl font-mono text-[#3B82F6] flex-shrink-0">
-                  {i + 1}
-                </div>
-                <p className="text-2xl text-gray-300 pt-2">{step}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WAITLIST MODAL */}
-      {showForm && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6">
-          <div className="bg-[#111111] border border-white/10 rounded-3xl max-w-md w-full p-10 relative">
-            <button onClick={() => setShowForm(false)} className="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">✕</button>
-            
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-semibold mb-3">Request Early Access</h2>
-              <p className="text-gray-400">Be among the first to experience Trusync.</p>
-            </div>
-
-            {submitted ? (
-              <div className="text-center py-12">
-                <Check className="mx-auto text-[#3B82F6] mb-4" size={64} />
-                <p className="text-2xl font-medium">Thank you!</p>
-                <p className="text-gray-400 mt-2">You're on the list. We'll contact you soon.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <input type="text" placeholder="Your name" required className="w-full px-6 py-4 bg-[#1A1A1A] border border-white/10 rounded-2xl focus:border-[#3B82F6] outline-none" onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-                <input type="email" placeholder="Work email" required className="w-full px-6 py-4 bg-[#1A1A1A] border border-white/10 rounded-2xl focus:border-[#3B82F6] outline-none" onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
-                <input type="text" placeholder="Company / Project" className="w-full px-6 py-4 bg-[#1A1A1A] border border-white/10 rounded-2xl focus:border-[#3B82F6] outline-none" onChange={(e) => setFormData({ ...formData, company: e.target.value })} />
-
-                <button type="submit" className="w-full py-4 bg-[#3B82F6] hover:bg-[#2563EB] rounded-2xl font-semibold text-lg transition">Submit Request</button>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
 
       {/* Footer */}
       <footer className="border-t border-white/10 py-12 text-center text-sm text-gray-500">
